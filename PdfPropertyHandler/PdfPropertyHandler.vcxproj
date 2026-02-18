@@ -1,0 +1,50 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E4721A4F-5B20-47F2-87C0-3D8D5C0D7799}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>PdfPropertyHandler</ProjectName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ClInclude Include="PdfPropertyHandler.h"/>
+    <ClInclude Include="ClassFactory.h"/>
+    <ClInclude Include="PdfMetadata.h"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp"/>
+    <ClCompile Include="ClassFactory.cpp"/>
+    <ClCompile Include="PdfPropertyHandler.cpp"/>
+    <ClCompile Include="PdfMetadata.cpp"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="PdfPropertyHandler.def"/>
+  </ItemGroup>
+
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+</Project>
