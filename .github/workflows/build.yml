@@ -1,0 +1,32 @@
+name: Build PDF Property Handler
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Build Solution (Release x64)
+      run: |
+        msbuild PdfPropertyHandler/PdfPropertyHandler.vcxproj `
+          /p:Configuration=Release `
+          /p:Platform=x64 `
+          /verbosity:minimal
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: PdfPropertyHandler-binaries
+        path: |
+          PdfPropertyHandler/x64/Release/PdfPropertyHandler.dll
+          PdfPropertyHandler/x64/Release/PdfPropertyHandler.pdb
