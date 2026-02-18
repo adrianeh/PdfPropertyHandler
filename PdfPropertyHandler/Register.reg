@@ -1,11 +1,11 @@
 Windows Registry Editor Version 5.00
 
 [HKEY_CLASSES_ROOT\.pdf\ShellEx\{28636AA6-953D-11D2-B5D6-00C04FD918D0}]
-@="{YOUR-CLSID}"
+@="{cd8b31fd-6cc6-4855-b41e-40fbcde0ca8f}"
 
-[HKEY_CLASSES_ROOT\CLSID\{YOUR-CLSID}]
+[HKEY_CLASSES_ROOT\CLSID\{cd8b31fd-6cc6-4855-b41e-40fbcde0ca8f}]
 @="PDF Property Handler"
 
-[HKEY_CLASSES_ROOT\CLSID\{YOUR-CLSID}\InprocServer32]
+[HKEY_CLASSES_ROOT\CLSID\{cd8b31fd-6cc6-4855-b41e-40fbcde0ca8f}\InprocServer32]
 @="C:\\Windows\\System32\\PdfPropertyHandler.dll"
 "ThreadingModel"="Both"
